@@ -4,6 +4,11 @@
 
 using namespace std;
 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 int main(){
     int n=26,start=97, stop=122;
     int count[26];
@@ -17,10 +22,11 @@ int main(){
             letters[counter]=start;
     }
     string username;
-    cout<<"Enter the Username"<<endl;
+    cout<<"Enter the Username less than 100 characters"<<endl;
     cin>>username;
     int strlength;
     strlength= username.length()-1;
+   if (strlength<100){ 
     for(int indexer=0; indexer<=strlength; indexer++){
         if(username[indexer]=='a'){
             count[0]=count[0]+1;    
@@ -100,6 +106,9 @@ int main(){
             count[25]=count[25]+1;
         }
 
+    }}
+    else {
+        cout<<"Greater than 100"<<endl;
     }
     int distinct=0;
     for(int choice=0; choice<26; choice++){
@@ -107,10 +116,10 @@ int main(){
                 distinct=distinct+1;
             }
     }
-    if (distinct%2==0){
+    if (distinct%2==0 && distinct!=0){
         cout<<"CHAT WITH HER!"<<endl;
     }
-    else {
+    else if(distinct%2!=0 && distinct!=0){
         cout<<"IGNORE HIM!"<<endl;
     }
     return 0;
