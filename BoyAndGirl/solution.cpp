@@ -4,11 +4,6 @@
 
 using namespace std;
 
-#include <iostream>
-#include <string>
-
-using namespace std;
-
 int main(){
     int n=26,start=97, stop=122;
     int count[26];
